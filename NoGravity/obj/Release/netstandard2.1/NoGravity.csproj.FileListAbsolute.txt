@@ -1,0 +1,16 @@
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\ExampleMod.deps.json
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\ExampleMod.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\ExampleMod.pdb
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\0Harmony.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\BepInEx.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\MyScriptAssembly.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\Unity.TextMeshPro.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\bin\Release\netstandard2.1\UnityEngine.CoreModule.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.csproj.AssemblyReference.cache
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.AssemblyInfoInputs.cache
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.AssemblyInfo.cs
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.csproj.CoreCompileInputs.cache
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\NoGravity.csproj.CopyComplete
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\ExampleMod.dll
+C:\Users\Exo\RiderProjects\NoGravity\NoGravity\obj\Release\netstandard2.1\ExampleMod.pdb

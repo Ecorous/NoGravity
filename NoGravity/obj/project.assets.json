@@ -1,0 +1,97 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "UnityEngine/5.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/UnityEngine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/UnityEngine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UnityEngine/5.6.1": {
+      "sha512": "uAhM+pBtZH7CvGCBQyT9CaksT9M4fzTCIMetYjOEocuFiQGF38uGgS8q5xUd1HddaeXwDG9VrMARHGz5IXhQLw==",
+      "type": "package",
+      "path": "unityengine/5.6.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net35/UnityEngine.dll",
+        "lib/netstandard2.0/UnityEngine.dll",
+        "unityengine.5.6.1.nupkg.sha512",
+        "unityengine.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "UnityEngine >= 5.6.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Exo\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Exo\\RiderProjects\\NoGravity\\NoGravity\\NoGravity.csproj",
+      "projectName": "ExampleMod",
+      "projectPath": "C:\\Users\\Exo\\RiderProjects\\NoGravity\\NoGravity\\NoGravity.csproj",
+      "packagesPath": "C:\\Users\\Exo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Exo\\RiderProjects\\NoGravity\\NoGravity\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Exo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.bepinex.dev/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
+        "dependencies": {
+          "UnityEngine": {
+            "target": "Package",
+            "version": "[5.6.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "NETStandard.Library": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
