@@ -1,43 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>ExampleMod</AssemblyName>
-    <Description>Example SpiderHeck mod</Description>
-    <Version>1.0.0</Version>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>latest</LangVersion>
-    <Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DebugType>embedded</DebugType>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        
+        <Description>No Gravity SpiderHeck mod</Description>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\References\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="0Harmony, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\References\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx">
-      <HintPath>..\References\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx, Version=5.4.18.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\References\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="MyScriptAssembly">
-      <HintPath>..\References\MyScriptAssembly.dll</HintPath>
-    </Reference>
-    <Reference Include="MyScriptAssembly, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\References\MyScriptAssembly.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\References\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\References\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+    <PropertyGroup>
+        <GameVersion>0.76.1-r.1</GameVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="UnityEngine" Version="5.6.1" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Unity" Version="6.0.0-be.567" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.AutoPlugin" Version="1.0.1" PrivateAssets="all" />
+        <PackageReference Include="SpiderHeck.GameLibs" Version="$(GameVersion)" PrivateAssets="all" />
+
+        <PackageReference Include="UnityEngine.Modules" Version="2020.3.13" PrivateAssets="all" />
+    </ItemGroup>
+
+    <Target Name="Copy" AfterTargets="Build" Condition="'$(SpiderHeck)' != ''">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SpiderHeck)\BepInEx\plugins\" UseSymboliclinksIfPossible="true" />
+    </Target>
+
 </Project>
