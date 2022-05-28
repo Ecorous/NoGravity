@@ -29,5 +29,5 @@ jobs:
           # Artifact name
           name: NoGravity # optional, default is artifact
           # A file, directory or wildcard pattern that describes what to upload
-          path: ExampleMod/bin/Release/net472/NoGravity.dll
+          path: ExampleMod/bin/Release/net2.0/NoGravity.dll
           # The desired behavior if no files are found using the provided path.
