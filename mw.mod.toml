@@ -1,0 +1,11 @@
+dependencies = []
+incompatibilities = []
+
+[metadata]
+id = "org.ecorous.nogravity"
+version = "1.0.0"
+title = "NoGravity"
+authors = [
+    "Ecorous"
+]
+game_version = "1.4"

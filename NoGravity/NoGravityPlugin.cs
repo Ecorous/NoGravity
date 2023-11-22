@@ -1,56 +1,31 @@
-﻿using BepInEx;
-using HarmonyLib;
+﻿using HarmonyLib;
+using modweaver.core;
 using UnityEngine;
 
 namespace NoGravity;
 
-[BepInAutoPlugin("com.exo.examplemod", "NoGravity")]
-public partial class NoGravityPlugin : BaseUnityPlugin
-{
-    public const string Author  = "Exo";
-
-    internal Harmony Harmony { get; } = new(Id);
-        
-    internal void Awake()
-    {
+[ModMainClass]
+public class NoGravityPlugin : Mod {
+    public override void Init() {
+        Logger.Info("Loading {0} v{1} by {2}", Metadata.title, Metadata.version, string.Join(", ", Metadata.authors));
         // Applying patches
-        Harmony.PatchAll();
-        Logger.LogInfo($"{Name} successfully loaded! Made by {Author}");
+        Logger.Debug("Setting up patcher...");
+        Harmony harmony = new Harmony(Metadata.id); 
+        Logger.Debug("Patching...");
+        harmony.PatchAll();
     }
-}
-/* Harmony patches modify the game code at runtime
- * Official website: https://harmony.pardeike.net/
- * Introduction: https://harmony.pardeike.net/articles/intro.html
- * API Documentation: https://harmony.pardeike.net/api/index.html
- */
 
-// Here's the example of harmony patch
-[HarmonyPatch(typeof(VersionNumberTextMesh), nameof(VersionNumberTextMesh.Start))]
-/* We're patching the method "Start" of class VersionNumberTextMesh
-* The first argument can typeof(class) or class name (string). Warning: it's case-sensitive
-* The second argument is our method. It can be a nameof(class.method) or method name (string). Also case-sensitive
-* So, for example, patch can look like this:
-* [HarmonyPatch("VersionNumberTextMesh", "Start")]
-* Or like this:
-* [HarmonyPatch(typeof(VersionNumberTextMesh), nameof(VersionNumberTextMesh.Start))
-* But the method Start is private and can't be accesed like that. So we have to use the method name (string) instead.
-*/
-public class VersionNumberTextMeshPatch
-{
-    // Postfix is called after executing target method's code.
-    public static void Postfix(VersionNumberTextMesh __instance)
-    {
-        // We're adding new line to version text.
-        __instance.textMesh.text +=
-            $"\n<color=blue>{NoGravityPlugin.Name} v{NoGravityPlugin.Version} by {NoGravityPlugin.Author}</color>";
+    public override void Ready() {
+        Logger.Info("Loaded {0}!", Metadata.title);
     }
+
+    public override void OnGUI(ModsMenuPopup ui) { }
 }
+
 
 [HarmonyPatch(typeof(SpiderController), nameof(SpiderController.AirControl))]
-public class SpiderControllerPatch
-{
-    public static void Prefix()
-    {
+public class SpiderControllerPatch {
+    public static void Prefix() {
         Physics2D.gravity = Vector2.zero;
     }
 }
